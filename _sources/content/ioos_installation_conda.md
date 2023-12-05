@@ -2,7 +2,7 @@
 
 For IOOS Python/R/Julia users we recommend the free
 [Miniforge](https://github.com/conda-forge/miniforge) distribution,
-a lightweight version of the [Anaconda Scientific Python Distribution](https://store.continuum.io/cshop/anaconda/) with the conda-forge channel pre-configured.
+a lightweight version of the [Anaconda Scientific Python Distribution](https://www.anaconda.com/download) with the conda-forge channel pre-configured.
 While the full Anaconda distribution will also work,
 it is faster to install Miniforge and you can install only the packages you need.
 If for some reason you decide later that you want the full Anaconda distribution,
@@ -11,7 +11,7 @@ you can install it by typing `conda install -c defaults anaconda`.
 Note that if you have the Anaconda Distribution,
 or any other installation,
 in your machine you may want to follow
-[these uninstall instructions](https://docs.anaconda.com/anaconda/install/uninstall)
+[these uninstall instructions](https://docs.anaconda.com/free/anaconda/install/uninstall/)
 before proceeding.
 
 ## Install
@@ -19,6 +19,7 @@ before proceeding.
 Download and install the appropriate Miniforge3 installer for your platform.
 
 ### Windows
+
 Download it from [https://github.com/conda-forge/miniforge](https://github.com/conda-forge/miniforge).
 Run the installer
 Choose _Just Me_ (not _All Users_),
@@ -38,40 +39,11 @@ Copy-and-paste this in the terminal:
 ```shell
 curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
 
-bash Miniforge-$(uname)-$(uname -m).sh
+bash Miniforge3-$(uname)-$(uname -m).sh
 ```
 
 and use all the default options,
 except for the license agreement where you must actively change it to `yes`.
-
-## Add mamba solver
-
-The first thing we will do is to install the mamba solver and add it to our `.condarc`.
-This make the faster mamba solver default in our installations.
-
-```
-conda install --name base conda-libmamba-solver --yes
-conda config --set solver libmamba
-```
-
-If that worked you should see:
-
-```
-***
-
-NOTE: You are using the EXPERIMENTAL libmamba solver integration.
-
-If something is not working as expected, please:
-
-1. Go to https://github.com/conda/conda/issues/new/choose
-2. Choose the "Libmamba Solver Feedback (Experimental Feature)" option
-
-Thank you for your help!
-
-***
-```
-
-For more info see: [https://github.com/conda/conda-libmamba-solver](https://github.com/conda/conda-libmamba-solver).
 
 ## Create the IOOS conda environment
 
@@ -160,14 +132,14 @@ but the binary libraries they depend on.
 So it's easier than `pip install` and, thanks to binary relocation,
 more powerful than python wheels.
 System-level installation of libraries and admin privileges are not required.
-Check out [Travis Oliphant's blog piece](http://technicaldiscovery.blogspot.com/2013/12/why-i-promote-conda.html) for more info.
+Check out [Travis Oliphant's blog piece](https://technicaldiscovery.blogspot.com/2013/12/why-i-promote-conda.html) for more info.
 
 ## How to get help
 
 - Raise an issue [here](https://github.com/ioos/ioos_code_lab/issues)
 - Please get help on the [IOOS-tech Google Group](https://groups.google.com/forum/?hl=en#!forum/ioos_tech)
 
-## Appendix:
+## Appendix
 
 ### What to do when everything seems to be broken?
 
@@ -177,13 +149,11 @@ For example, if you are seeing kernel errors like the one below.
 
 1. If you believe that only your environment is broken you can follow the [update environment](#updating-the-ioos-environment) instructions from above;
 1. Sometimes conda updates can break backwards compatibility and updating is broken. In those cases remove the Miniforge3 directory and perform a fresh install of the new version.
-1. In rare cases you may want to install a frozen version of the environment. Like, you need the exact same version that is running on our CIs. You can accomplish that by [downloading the lock file your system](https://github.com/ioos/ioos_code_lab/tree/main/.binder) and issuing the command:
+1. In rare cases you may want to install a frozen version of the environment. Like, you need the exact same version that is running on our CIs. You can accomplish that by [downloading the lock file](https://raw.githubusercontent.com/ioos/ioos_code_lab/main/.binder/conda-lock.yml) and issuing the command:
 
 ```shell
-conda create --name IOOS --file .binder/conda-linux-64.lock
+conda create --name IOOS --file .binder/conda-lock.yml
 ```
-
-Be sure to change `linux-64` in the lock file name according to your system (`win-64` or `osx-64`).
 
 ### conda-lock
 

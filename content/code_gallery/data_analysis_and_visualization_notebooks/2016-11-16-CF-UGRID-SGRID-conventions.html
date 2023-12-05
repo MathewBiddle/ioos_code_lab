@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
@@ -68,13 +70,14 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/code_gallery/data_analysis_and_visualization_notebooks/2016-11-16-CF-UGRID-SGRID-conventions';</script>
+    <link rel="canonical" href="https://ioos.github.io/ioos_code_lab/content/code_gallery/data_analysis_and_visualization_notebooks/2016-11-16-CF-UGRID-SGRID-conventions.html" />
     <link rel="shortcut icon" href="../../../_static/IOOS_logo.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Quick demonstration of R-notebooks using the r-oce library" href="2017-01-23-R-notebook.html" />
     <link rel="prev" title="Data Analysis And Visualization" href="../data_analysis_and_visualization.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -83,6 +86,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -143,13 +155,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="../../../_static/IOOS_logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../../_static/IOOS_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../../_static/IOOS_logo.png" class="logo__image only-light" alt="The U.S. Integrated Ocean Observing System (IOOS) - Home"/>
+    <script>document.write(`<img src="../../../_static/IOOS_logo.png" class="logo__image only-dark" alt="The U.S. Integrated Ocean Observing System (IOOS) - Home"/>`);</script>
   
   
 </a></div>
@@ -421,10 +434,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -432,7 +445,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -474,18 +487,18 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="parsing-conventions-and-standards-with-python">
-<h1>Parsing Conventions and standards with Python<a class="headerlink" href="#parsing-conventions-and-standards-with-python" title="Permalink to this headline">#</a></h1>
+<h1>Parsing Conventions and standards with Python<a class="headerlink" href="#parsing-conventions-and-standards-with-python" title="Permalink to this heading">#</a></h1>
 <p>Created: 2019-11-16</p>
 <p>Updated: 2022-05-25</p>
 <p>Metadata conventions, like the Climate and Forecast (CF) conventions,
 can be cumbersome to adhere to but it will be very handy when you or other users manipulate the data later in time.</p>
-<p>In this notebook we will explore three Python modules that parse <a class="reference external" href="http://cfconventions.org/cf-conventions/v1.6.0/cf-conventions.html"><code class="docutils literal notranslate"><span class="pre">CF-1.6</span></code></a>,
-<a class="reference external" href="http://ugrid-conventions.github.io/ugrid-conventions/"><code class="docutils literal notranslate"><span class="pre">UGRID-1.0</span></code></a>,
-and <a class="reference external" href="http://sgrid.github.io/sgrid/"><code class="docutils literal notranslate"><span class="pre">SGRID-0.3</span></code></a></p>
+<p>In this notebook we will explore three Python modules that parse <a class="reference external" href="https://cfconventions.org/cf-conventions/v1.6.0/cf-conventions.html"><code class="docutils literal notranslate"><span class="pre">CF-1.6</span></code></a>,
+<a class="reference external" href="https://ugrid-conventions.github.io/ugrid-conventions/"><code class="docutils literal notranslate"><span class="pre">UGRID-1.0</span></code></a>,
+and <a class="reference external" href="https://sgrid.github.io/sgrid/"><code class="docutils literal notranslate"><span class="pre">SGRID-0.3</span></code></a></p>
 <section id="cf-1-6-with-cf-xarray">
-<h2>CF-1.6 with cf_xarray<a class="headerlink" href="#cf-1-6-with-cf-xarray" title="Permalink to this headline">#</a></h2>
+<h2>CF-1.6 with cf_xarray<a class="headerlink" href="#cf-1-6-with-cf-xarray" title="Permalink to this heading">#</a></h2>
 <p>There are many Python libraries to read and write CF metadata,
-including <a class="reference external" href="http://scitools.org.uk/iris/"><code class="docutils literal notranslate"><span class="pre">iris</span></code></a> and <a class="reference external" href="https://cf-xarray.readthedocs.io/"><code class="docutils literal notranslate"><span class="pre">cf_xarray</span></code></a>.</p>
+including <a class="reference external" href="https://scitools-iris.readthedocs.io/en/stable/"><code class="docutils literal notranslate"><span class="pre">iris</span></code></a> and <a class="reference external" href="https://cf-xarray.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">cf_xarray</span></code></a>.</p>
 <p>We will explore <code class="docutils literal notranslate"><span class="pre">cf_xarray</span></code> in this notebook because it is built on top of the popular <code class="docutils literal notranslate"><span class="pre">xarray</span></code> package.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1058,9 +1071,9 @@ Attributes:
 </div>
 </section>
 <section id="ugrid-1-0-with-pyugrid">
-<h2>UGRID-1.0 with pyugrid<a class="headerlink" href="#ugrid-1-0-with-pyugrid" title="Permalink to this headline">#</a></h2>
+<h2>UGRID-1.0 with pyugrid<a class="headerlink" href="#ugrid-1-0-with-pyugrid" title="Permalink to this heading">#</a></h2>
 <p>The Unstructured Grids convention encompasses any type of grid topology,
-and the details of the convention are documented in <a class="reference external" href="http://bit.ly/2gvtmqQ">https://ugrid-conventions.github.io/ugrid-conventions</a>.
+and the details of the convention are documented in <a class="reference external" href="https://ugrid-conventions.github.io/ugrid-conventions/">https://ugrid-conventions.github.io/ugrid-conventions</a>.
 Right now <code class="docutils literal notranslate"><span class="pre">pyugrid</span></code> supports only triangular topologies, more will be added in the near future.</p>
 <p>In a nutshell the <code class="docutils literal notranslate"><span class="pre">pyugrid</span></code> parses and exposes the underlying grid topology in a python object.</p>
 <div class="cell docutils container">
@@ -1121,10 +1134,10 @@ if the data is <code class="docutils literal notranslate"><span class="pre">UGRI
 <img alt="../../../_images/5d100526b7338936d6dd321fd5cb7030d85b7363ee8bd2b4b7458b29e08f26ba.png" src="../../../_images/5d100526b7338936d6dd321fd5cb7030d85b7363ee8bd2b4b7458b29e08f26ba.png" />
 </div>
 </div>
-<p>Check a longer <code class="docutils literal notranslate"><span class="pre">pyugrid</span></code> example <a class="reference external" href="http://bit.ly/2gaZLCy">here</a>.</p>
+<p>Check a longer <code class="docutils literal notranslate"><span class="pre">pyugrid</span></code> example <a class="reference external" href="https://ocefpaf.github.io/python4oceanographers/blog/2015/07/20/pyugrid/">here</a>.</p>
 </section>
 <section id="sgrid-0-3-with-pysgrid">
-<h2>SGRID-0.3 with <code class="docutils literal notranslate"><span class="pre">pysgrid</span></code><a class="headerlink" href="#sgrid-0-3-with-pysgrid" title="Permalink to this headline">#</a></h2>
+<h2>SGRID-0.3 with <code class="docutils literal notranslate"><span class="pre">pysgrid</span></code><a class="headerlink" href="#sgrid-0-3-with-pysgrid" title="Permalink to this heading">#</a></h2>
 <p>The Staggered Grid conventions help users to interpret grids from models like ROMS and DELFT,
 where the variables are defined in different grids.
 The specs are detailed in <a class="reference external" href="https://sgrid.github.io/sgrid">https://sgrid.github.io/sgrid</a>.</p>
@@ -1344,7 +1357,7 @@ There is plenty of room to create convenience methods using the low level access
 <img alt="../../../_images/e4dbb611000621a119839532f6cb8db87b008c275d51a24dbaf77d9b56ba4740.png" src="../../../_images/e4dbb611000621a119839532f6cb8db87b008c275d51a24dbaf77d9b56ba4740.png" />
 </div>
 </div>
-<p>For more examples on <code class="docutils literal notranslate"><span class="pre">pysgrid</span></code> check this <a class="reference external" href="http://bit.ly/2fKVk0x">post</a> out.</p>
+<p>For more examples on <code class="docutils literal notranslate"><span class="pre">pysgrid</span></code> check this <a class="reference external" href="https://ocefpaf.github.io/python4oceanographers/blog/2015/12/07/pysgrid/">post</a> out.</p>
 </section>
 </section>
 
@@ -1373,11 +1386,10 @@ There is plenty of room to create convenience methods using the low level access
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../data_analysis_and_visualization.html"
@@ -1397,10 +1409,7 @@ There is plenty of room to create convenience methods using the low level access
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1461,8 +1470,8 @@ By IOOS
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
 
   <footer class="bd-footer">
   </footer>
